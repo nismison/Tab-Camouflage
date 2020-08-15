@@ -3,12 +3,14 @@ const submitAreaBtn = document.getElementById('submitAreaBtn')
 const areaText = document.getElementById('areaText')
 const memoText = document.getElementById('memoText')
 const addBtn = document.getElementById('addBtn')
+const uploadIconBtn = document.getElementById('icon-preview')
 const list = document.getElementById('list')
 
 let areaTextValue = ''
 let addType = 0 // 1-网址 2-域
 let curCamouflageList = [] // 当前伪装列表
 let tipList = []
+let iconBase64 = ''
 
 async function init() {
   curCamouflageList = await getCamouflageList() // 当前伪装列表
@@ -29,6 +31,7 @@ async function init() {
       <div class="cell head row">
         <span class="url-text">地址 / 域</span>
         <span class="memo-text">名称</span>
+        <span class="memo-text">图标</span>
         <span>状态</span>
         <span class="action-text">操作</span>
       </div>
@@ -37,7 +40,8 @@ async function init() {
       nodes += `
         <div class="cell row">
           <span class="url-text" title="${item.url}">${item.url}</span>
-          <span>${item.memo}</span>
+          <span class="memo-text" title="${item.memo}">${item.memo}</span>
+          <span><img src="${item.icon}" style="width: 32px; height: 32px; border-radius: 50%"></span>
           <span class="${item.status ? 'color-green' : 'color-red'}">${item.status ? '启用' : '禁用'}</span>
           <div class="action-text">
             <button class="btn ${item.status ? 'un-action-btn' : 'action-btn'}" id="${item.status ? 'disabled' : 'enable'}Btn${index}">${!item.status ? '启用' : '禁用'}</button>
@@ -87,6 +91,7 @@ function save_options() {
   curCamouflageList.unshift({
     url: areaTextValue,
     memo: memoText.value,
+    icon: iconBase64,
     status: 1
   })
   chrome.storage.local.set({
@@ -145,6 +150,7 @@ function getUrl(type) {
 }
 
 function checkInput() {
+  // 检查输入框
   if (!areaText.value || !memoText.value) {
     addBtn.setAttribute('disabled', 'disabled')
   } else {
@@ -152,7 +158,7 @@ function checkInput() {
   }
 }
 
-function tip(info, type='success') {
+function tip(info, type = 'success') {
   // 简单的消息通知
   info = info || '';
   if (tipList.length) {
@@ -196,6 +202,43 @@ areaText.addEventListener('input', () => {
 memoText.addEventListener('input', () => {
   checkInput()
 })
+uploadIconBtn.addEventListener('click', () => {
+  var fileChooser = document.createElement('input');
+  fileChooser.accept = "image/png,image/gif,image/jpeg,image/ico";
+  fileChooser.type = 'file';
+  fileChooser.click();
+  fileChooser.addEventListener('change', function () {
+    var filesList = fileChooser.files;
+    if (filesList.length) { //如果取消上传，则该文件的长度为0
+      imgChange(fileChooser).then(res => {
+        iconBase64 = res
+        document.getElementById('icon-preview').innerHTML = `
+          <img class="icon-preview" src="${res}">
+        `
+        uploadIconBtn.style.borderWidth = 0
+      }).catch(e => {
+        iconBase64 = ''
+      })
+    } else {
+      alert('no')
+    }
+  })
+})
+
+function imgChange(img) {
+  return new Promise(resolve => {
+    // 生成一个文件读取的对象
+    const reader = new FileReader();
+    reader.onload = ev => {
+      // base64码
+      resolve(ev.target.result)
+      console.log(ev.target.result);
+    }
+    //发起异步读取文件请求，读取结果为data:url的字符串形式，
+    reader.readAsDataURL(img.files[0]);
+    console.log(img.files[0]);
+  })
+}
 
 
 init()

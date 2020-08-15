@@ -1,11 +1,11 @@
 ﻿document.addEventListener('DOMContentLoaded', async function() {
 	const href = location.href;
 	const origin = location.origin;
-	let urls = await getCamouflageList()
-	urls = urls.map(item => item.url)
-	if (urls.indexOf(removeHttp(href)) !== -1 || urls.indexOf(removeHttp(origin)) !== -1) {
-		setTabIcon()
-		setTabTitle('你好吗')
+	const urls = await getCamouflageList()
+	const urlFilter = urls.filter(item => item.url === removeHttp(href) || item.url === removeHttp(origin))
+	if (urlFilter.length && urlFilter[0].status) {
+		setTabIcon(urlFilter[0].icon)
+		setTabTitle(urlFilter[0].name)
 	}
 })
 
@@ -26,8 +26,8 @@ function getCamouflageList() {
 }
 
 function setTabTitle(title) {
-	title = title || "我是测试页面标题"
 	// 修改页面标题
+	title = title || "我是测试页面标题"
 	chrome.runtime.sendMessage({
 		name: "executeScript",
 		code: `document.title = "${title}"`
@@ -35,7 +35,6 @@ function setTabTitle(title) {
 }
 
 function setTabIcon(iconUrl) {
-	iconUrl = iconUrl || 'https://www.google.com/images/icons/product/chrome-32.png'
 	// 修改页面图标
 	let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
 	link.type = 'image/x-icon';
