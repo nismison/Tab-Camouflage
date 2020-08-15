@@ -204,7 +204,7 @@ memoText.addEventListener('input', () => {
 })
 uploadIconBtn.addEventListener('click', () => {
   var fileChooser = document.createElement('input');
-  fileChooser.accept = "image/png,image/gif,image/jpeg,image/ico";
+  fileChooser.accept = "image/png,image/gif,image/jpeg,image/x-icon";
   fileChooser.type = 'file';
   fileChooser.click();
   fileChooser.addEventListener('change', function () {

@@ -5,7 +5,7 @@
 	const urlFilter = urls.filter(item => item.url === removeHttp(href) || item.url === removeHttp(origin))
 	if (urlFilter.length && urlFilter[0].status) {
 		setTabIcon(urlFilter[0].icon)
-		setTabTitle(urlFilter[0].name)
+		setTabTitle(urlFilter[0].memo)
 	}
 })
 
