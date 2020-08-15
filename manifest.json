@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "Tab Camouflage - Tab伪装",
+  "version": "1.0",
+  "description": "自定义指定Tab标题，伪装标签页",
+  "author": "Nismison",
+  "icons": {
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "permissions": [
+    "tabs",
+    "storage", "http://*/*", "https://*/*"
+  ],
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content-script.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    "inject.js"
+  ],
+  "background": {
+    "page": "background.html"
+  }
+}
