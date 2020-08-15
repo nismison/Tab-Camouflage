@@ -27,7 +27,7 @@ function getCamouflageList() {
 
 function setTabTitle(title) {
 	// 修改页面标题
-	title = title || "我是测试页面标题"
+	title = title || ""
 	chrome.runtime.sendMessage({
 		name: "executeScript",
 		code: `document.title = "${title}"`
@@ -36,7 +36,11 @@ function setTabTitle(title) {
 
 function setTabIcon(iconUrl) {
 	// 修改页面图标
-	let link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+	let links = document.querySelectorAll("link[rel*='icon']");
+	links.forEach(node => {
+		node.parentNode.removeChild( node )
+	})
+	let link = document.createElement('link');
 	link.type = 'image/x-icon';
 	link.rel = 'shortcut icon';
 	link.href = iconUrl;
