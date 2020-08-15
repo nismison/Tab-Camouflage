@@ -98,7 +98,7 @@ function save_options() {
     TAB_CAMOUFLAGE: curCamouflageList
   }, () => {
     init()
-    tip('保存成功')
+    tip('保存成功，刷新后生效')
   });
 }
 
@@ -109,7 +109,7 @@ function deleteOption(index) {
     TAB_CAMOUFLAGE: lst,
   }, () => {
     init()
-    tip('删除成功', 'error')
+    tip('删除成功，刷新后生效', 'error')
   });
 }
 
@@ -120,7 +120,7 @@ function disabledOption(index) {
     TAB_CAMOUFLAGE: curCamouflageList,
   }, () => {
     init()
-    tip('禁用成功', 'error')
+    tip('禁用成功，刷新后生效', 'error')
   });
 }
 
@@ -131,7 +131,7 @@ function enableOption(index) {
     TAB_CAMOUFLAGE: curCamouflageList,
   }, () => {
     init()
-    tip('启用成功')
+    tip('启用成功，刷新后生效')
   });
 }
 
@@ -187,6 +187,25 @@ function tip(info, type = 'success') {
   }, 1500);
 }
 
+
+
+function imgChange(img) {
+  // 上传图片转base64
+  return new Promise(resolve => {
+    // 生成一个文件读取的对象
+    const reader = new FileReader();
+    reader.onload = ev => {
+      // base64码
+      resolve(ev.target.result)
+      console.log(ev.target.result);
+    }
+    //发起异步读取文件请求，读取结果为data:url的字符串形式，
+    reader.readAsDataURL(img.files[0]);
+    console.log(img.files[0]);
+  })
+}
+
+
 submitBtn.addEventListener('click', () => {
   getUrl('address')
   addType = 1
@@ -219,26 +238,8 @@ uploadIconBtn.addEventListener('click', () => {
       }).catch(e => {
         iconBase64 = ''
       })
-    } else {
-      alert('no')
     }
   })
 })
-
-function imgChange(img) {
-  return new Promise(resolve => {
-    // 生成一个文件读取的对象
-    const reader = new FileReader();
-    reader.onload = ev => {
-      // base64码
-      resolve(ev.target.result)
-      console.log(ev.target.result);
-    }
-    //发起异步读取文件请求，读取结果为data:url的字符串形式，
-    reader.readAsDataURL(img.files[0]);
-    console.log(img.files[0]);
-  })
-}
-
 
 init()
