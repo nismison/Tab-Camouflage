@@ -1,19 +1,20 @@
 {
   "manifest_version": 2,
-  "name": "Tab Camouflage - Tab伪装",
+  "name": "Tab Camouflage - 标签页伪装",
   "version": "1.0",
-  "description": "自定义指定Tab标题，伪装标签页",
+  "description": "自定义Tab标题 / icon，伪装标签页，从此摸\uD83D\uDC1F告别老板键",
   "author": "Nismison",
   "icons": {
-    "48": "icon.png",
-    "128": "icon.png"
+    "16": "imgs/icon.png",
+    "48": "imgs/icon.png",
+    "128": "imgs/icon.png"
   },
   "permissions": [
     "tabs",
     "storage", "http://*/*", "https://*/*"
   ],
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "imgs/icon.png",
     "default_popup": "popup.html"
   },
   "content_scripts": [
@@ -26,9 +27,6 @@
       ],
       "run_at": "document_start"
     }
-  ],
-  "web_accessible_resources": [
-    "inject.js"
   ],
   "background": {
     "page": "background.html"
