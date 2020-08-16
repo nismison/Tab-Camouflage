@@ -26,15 +26,15 @@
 
 > **注：，如果当前有已经打开的符合匹配的Tab，需要手动刷新页面即可生效**
 
-<img src="/Users/nismison/Library/Application Support/typora-user-images/image-20200816072632283.png" alt="image-20200816072632283" style="zoom:50%;" />
+<img src="http://pic.tryfang.cn/image-20200816072632283.png" alt="image-20200816072632283" style="zoom:50%;" />
 
 
 
 ## 三、效果图
 
-<img src="/Users/nismison/Library/Application Support/typora-user-images/image-20200816074801137.png" alt="image-20200816074801137" style="zoom:50%;" />
+<img src="http://pic.tryfang.cn/image-20200816074801137.png" alt="image-20200816074801137" style="zoom:50%;" />
 
-<img src="/Users/nismison/Library/Application Support/typora-user-images/image-20200816074843211.png" alt="image-20200816074843211" style="zoom:50%;" />
+<img src="http://pic.tryfang.cn/image-20200816074843211.png" alt="image-20200816074843211" style="zoom:50%;" />
 
 
 
