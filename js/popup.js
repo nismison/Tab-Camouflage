@@ -188,7 +188,6 @@ function tip(info, type = 'success') {
 }
 
 
-
 function imgChange(img) {
   // 上传图片转base64
   return new Promise(resolve => {

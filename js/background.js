@@ -1,15 +1,10 @@
-// 监听Popup事件
+// 监听Content-script事件
 chrome.runtime.onMessage.addListener((req,sender, sendResponse) => {
   if (req.name === 'getCamouflageList') {
     (async () => {
       const lst = await getCamouflageList();
       sendResponse(lst);
     })();
-    return true;
-  } else if (req.name === 'executeScript') {
-    chrome.tabs.executeScript({
-      code: req.code
-    })
     return true;
   }
 })

@@ -28,10 +28,7 @@ function getCamouflageList() {
 function setTabTitle(title) {
 	// 修改页面标题
 	title = title || ""
-	chrome.runtime.sendMessage({
-		name: "executeScript",
-		code: `document.title = "${title}"`
-	})
+	document.title = title
 }
 
 function setTabIcon(iconUrl) {
