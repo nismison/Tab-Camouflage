@@ -12,6 +12,28 @@
 
 ## 一、安装扩展
 
+- **Chrome插件市场安装**
+
+  目前插件还在审核中，审核通过以后即可在插件市场中安装
+
+- **源文件安装**
+
+  1. clone/download该项目，解压到桌面
+
+  2. 打开链接[chrome://extensions](chrome://extensions)，勾选右上角“开发者模式”选项
+
+     <img src="http://pic.tryfang.cn/Snipaste_2020-08-18_09-50-20.png" style="zoom:50%;" />
+
+  3. 点击左上角“加载已解压的扩展程序”，选择第1步解压的文件夹
+
+     <img src="http://pic.tryfang.cn/Snipaste_2020-08-18_09-53-18.png" style="zoom:50%;" />
+
+  4. 添加扩展成功，选择启用即可
+
+     <img src="/Users/nismison/Library/Application Support/typora-user-images/image-20200818095526715.png" style="zoom:50%;" />
+
+
+
 ## 二、配置地址/域
 
 **地址：** 只有当精确匹配到该地址才会修改Tab标签
