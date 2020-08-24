@@ -14,7 +14,7 @@
 
 - ### **Chrome插件市场安装**
 
-  **[点击前往Chrome插件市场地址]([https://chrome.google.com/webstore/detail/tab-camouflage-%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%BC%AA%E8%A3%85/fngcfdjnpcccfkmpomcliiddjbacpgaa?hl=zh-CN&authuser=0](https://chrome.google.com/webstore/detail/tab-camouflage-标签页伪装/fngcfdjnpcccfkmpomcliiddjbacpgaa?hl=zh-CN&authuser=0))**
+  [点击前往Chrome插件市场地址]([https://chrome.google.com/webstore/detail/tab-camouflage-%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%BC%AA%E8%A3%85/fngcfdjnpcccfkmpomcliiddjbacpgaa?hl=zh-CN&authuser=0](https://chrome.google.com/webstore/detail/tab-camouflage-标签页伪装/fngcfdjnpcccfkmpomcliiddjbacpgaa?hl=zh-CN&authuser=0))
 
   
 
