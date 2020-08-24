@@ -14,13 +14,15 @@
 
 - ### **Chrome插件市场安装**
 
-  目前插件还在审核中，审核通过以后即可在插件市场中安装
+  **[点击前往Chrome插件市场地址]([https://chrome.google.com/webstore/detail/tab-camouflage-%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%BC%AA%E8%A3%85/fngcfdjnpcccfkmpomcliiddjbacpgaa?hl=zh-CN&authuser=0](https://chrome.google.com/webstore/detail/tab-camouflage-标签页伪装/fngcfdjnpcccfkmpomcliiddjbacpgaa?hl=zh-CN&authuser=0))**
+
+  
 
 - ### **源文件安装**
 
-  1. clone/download该项目，解压到桌面
+  1. `clone`/`download`该项目，解压到桌面
 
-  2. 打开链接[chrome://extensions](chrome://extensions)，勾选右上角“**开发者模式**”选项
+  2. 打开地址[chrome://extensions](chrome://extensions)，勾选右上角“**开发者模式**”选项
 
      <img src="http://pic.tryfang.cn/Snipaste_2020-08-18_09-50-20.png" style="zoom:50%;" />
 
