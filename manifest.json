@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Tab Camouflage - 标签页伪装",
-  "version": "1.0",
+  "version": "1.1",
   "description": "自定义Tab标题 / icon，伪装标签页，从此摸\uD83D\uDC1F告别老板键",
   "author": "Nismison",
   "icons": {
